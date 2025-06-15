@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Transform, Transition, Animation</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f8f8f8;
+      padding: 40px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section h2 {
+      margin-bottom: 20px;
+    }
+
+    .transform-box {
+      width: 100px;
+      height: 100px;
+      background-color: #add8e6;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    .rotate {
+      transform: rotate(45deg);
+    }
+
+    .scale {
+      transform: scale(1.5);
+    }
+
+    .translate {
+      transform: translate(30px, 20px);
+    }
+
+    .skew {
+      transform: skew(20deg, 10deg);
+    }
+
+    .transition-box {
+      width: 120px;
+      height: 120px;
+      background-color: #ffcccb;
+      transition: transform 0.7s ease, background-color 0.5s ease;
+    }
+
+    .transition-box:hover {
+      transform: scale(1.2) rotate(10deg);
+      background-color: #ffa07a;
+    }
+
+    .animate-box {
+      width: 100px;
+      height: 100px;
+      background-color: #90ee90;
+      animation: moveAndResize 2s ease-in-out 0s infinite alternate;
+    }
+
+    @keyframes moveAndResize {
+      0% {
+        transform: translateX(0) scale(1);
+      }
+      50% {
+        transform: translateX(100px) scale(1.5);
+      }
+      100% {
+        transform: translateX(0) scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h2>Transform</h2>
+    <div class="transform-box rotate"></div>
+    <div class="transform-box scale"></div>
+    <div class="transform-box translate"></div>
+    <div class="transform-box skew"></div>
+  </div>
+
+  <div class="section">
+    <h2>Transition</h2>
+    <div class="transition-box"></div>
+  </div>
+
+  <div class="section">
+    <h2>Animation (keyframes)</h2>
+    <div class="animate-box"></div>
+  </div>
+
+</body>
+</html>
